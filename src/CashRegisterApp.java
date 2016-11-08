@@ -1,12 +1,17 @@
+
 // Team Clara, Jake, Taher,
 
 
 
 public class CashRegisterApp {
+	
 
+//static String method = ("");
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+CashRegister.setPayMethod();
 	}
+
+
+
 
 }
