@@ -2,6 +2,8 @@
 public class Product {
 //you are going to generate getters and setters  
 	
+	
+	//set price to string convert to double when needed
 	private String category;
 	private String item;
 	private double price;

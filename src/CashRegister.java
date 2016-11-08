@@ -49,6 +49,13 @@ public class CashRegister {
 			}
 
 		}
+		//make paymethod
+		//each paymethod will have unique message
+		//cash 
+		//credit cc#, exp date, cvv
+		//check "do not take checks"
+		
+		//once paid give receipt
 
 		return payMethod;
 

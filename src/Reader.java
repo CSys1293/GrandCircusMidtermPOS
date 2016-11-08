@@ -14,6 +14,8 @@ public class Reader {
 			System.out.println("Could not find file");
 		}
 	}
+	
+	
 
 	public void readFile() {
 		while (reader.hasNext()) {

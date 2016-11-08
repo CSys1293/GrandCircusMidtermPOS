@@ -12,6 +12,8 @@ public class POSReceipt {
 	
 	System.out.println("Elk Mouth Goods");
 	
+	//formatting
+	
 	
 	System.out.println("Your items: " + items + " " + price);
 	System.out.println("Your subtotal is: " + subtotal);
