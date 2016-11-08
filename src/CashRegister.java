@@ -1,4 +1,4 @@
-
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class CashRegister {
@@ -45,7 +45,6 @@ public class CashRegister {
 			if (payMethod.compareTo(cash) != 0 && payMethod.compareTo(credit) != 0 && payMethod.compareTo(check) != 0) {
 				System.out.println("Please enter check, cash, or credit.");
 			} else {
-				System.out.println(payMethod.compareTo(cash));
 				isValid = true;
 			}
 
@@ -55,14 +54,14 @@ public class CashRegister {
 
 	}
 
-	public static void makePayment() {
-		if (payMethod.equals(cash)) {
-
-		} else if (payMethod.equals(credit)) {
-
-		} else {
-
-		}
-	}
+//	public static void makePayment() {
+//		if (payMethod.equals(cash)) {
+//
+//		} else if (payMethod.equals(credit)) {
+//
+//		} else {
+//
+//		}
+//	}
 
 }
