@@ -1,6 +1,6 @@
-import java.io.File;
+/*import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
+import java.io.IOException;*/
 import java.util.ArrayList;
 
 //import java.util.Scanner;
@@ -11,12 +11,12 @@ import java.util.ArrayList;
 
 public class CashRegisterApp {
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args){ //throws IOException {
 		ArrayList<Product> products = new ArrayList<Product>();
 //		Scanner scan = new Scanner(System.in);
 //		boolean keepGoing = true;
 
-		      File file = new File("newPriceList.txt");
+/*		      File file = new File("newPriceList.txt");
 		      
 		      // creates the file
 		      file.createNewFile();
@@ -46,7 +46,8 @@ public class CashRegisterApp {
 		      		+ "\n\"Shoes\", \"Rain boots\", 40.00"); 
 		      writer.flush();
 		      writer.close();
-
-		   }
+*/
+		
 	}
+}
 
