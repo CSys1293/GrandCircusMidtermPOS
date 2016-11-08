@@ -9,7 +9,6 @@ public class POSReceipt {
 
 	public void setReceiptOfItems(ArrayList<Product> receiptOfItems) {
 		this.receiptOfItems = receiptOfItems;
-	}
-	
+	}	
 	
 }
