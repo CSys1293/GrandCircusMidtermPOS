@@ -1,8 +1,8 @@
-"Camping", "Tent", 129.95
-"Camping", "Sleeping bag", 50.00
-"Camping", "Lantern", 12.99
-"Camping", "Camp stove", 39.99
-"Outerwear", "Jacket", 189.50
+Camping	Tent	129.95
+Camping	Sleeping bag		50.00
+Camping	Lantern	12.99
+Camping	Camp stove	39.99
+Outerwear	Jacket	189.50
 "Outerwear", "Winter Coat", 199.99
 "Outerwear", "Snowsuit", 100.00
 "Outerwear", "Gloves", 12.95
