@@ -1,6 +1,8 @@
 /*import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;*/
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 
 //import java.util.Scanner;
@@ -13,6 +15,12 @@ public class CashRegisterApp {
 	
 	public static void main(String[] args){ //throws IOException {
 		ArrayList<Product> products = new ArrayList<Product>();
+		Reader list = new Reader();
+		list.openFile();
+		list.readFile();
+		
+		
+
 //		Scanner scan = new Scanner(System.in);
 //		boolean keepGoing = true;
 
@@ -34,7 +42,7 @@ public class CashRegisterApp {
 		      		+ "\n\"Outerwear\", \"Snowsuit\", 100.00"
 		      		+ "\n\"Outerwear\", \"Gloves\", 12.95"
 		      		+ "\n\"Outerwear\", \"Hat\", 10.00"
-		      		+ "\n\"Outerwear”, \"Scarf\", 7.86"
+		      		+ "\n\"Outerwear\", \"Scarf\", 7.86"
 		      		+ "\n\"Water Sports\", \"Kayak\", 700.00 "
 		      		+ "\n\"Water Sports\", \"Oars\", 23.93 "
 		      		+ "\n\"Water Sports\", \"Fishing poles\", 89.45 "
@@ -46,8 +54,13 @@ public class CashRegisterApp {
 		      		+ "\n\"Shoes\", \"Rain boots\", 40.00"); 
 		      writer.flush();
 		      writer.close();
-*/
+*/		double price = 3.25;
+		int quantity = 2;
 		
+		CashRegister.setPayMethod();
+		CashRegister.setSubTotal();
+		CashRegister.getSubTotal();
+		System.out.println(CashRegister.getSubTotal());
 	}
 }
 
