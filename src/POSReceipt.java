@@ -15,11 +15,11 @@ public class POSReceipt {
 	//formatting
 	
 	
-	System.out.println("Your items: " + items + " " + price);
-	System.out.println("Your subtotal is: " + subtotal);
-	System.out.println("Your tax: " + tax);
-	System.out.println("Your grandtotal is: " + grandtotal);
-	
+//	System.out.println("Your items: " + items + " " + price);
+//	System.out.println("Your subtotal is: " + subtotal);
+//	System.out.println("Your tax: " + tax);
+//	System.out.println("Your grandtotal is: " + grandtotal);
+//	
 	System.out.println("Thank you for shopping at Elk Mouth Goods");
 	
 	}
