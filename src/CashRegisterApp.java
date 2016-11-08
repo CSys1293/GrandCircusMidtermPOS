@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+//import java.util.Scanner;
+
 // Team Clara, Jake, Taher,
 
 
@@ -5,7 +8,9 @@
 public class CashRegisterApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ArrayList<Product> products = new ArrayList<Product>();
+//		Scanner scan = new Scanner(System.in);
+//		boolean keepGoing = true;
 
 	}
 
