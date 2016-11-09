@@ -1,5 +1,5 @@
 Camping,Tent,129.95
-Camping,SleepingBag,50.00
+Camping,Sleeping Bag,50.00
 Camping,Lantern,12.99
 Camping,CampStove,39.99
 Outerwear,Jacket,189.50
@@ -13,7 +13,7 @@ WaterSports,Oars,23.93
 WaterSports,Fishing poles,89.45 
 WaterSports,Water skis,154.99 
 WaterSports,Canoe,968.31 
-Shoes,HikingBoots,200.00 
-Shoes,TrailShoes,99.00 
-Shoes,SnowBoots,129.00 
-Shoes,RainBoots,40.00
+Shoes,Hiking Boots,200.00 
+Shoes,Trail Shoes,99.00 
+Shoes,Snow Boots,129.00 
+Shoes,Rain Boots,40.00
