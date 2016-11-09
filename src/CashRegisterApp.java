@@ -13,8 +13,10 @@ public class CashRegisterApp {
 		String category = null;
 
 		System.out.println("Welcome to Elk Mouth Goods");
-		System.out.println("What are you shopping for today?");
-		System.out.println("1. Camping, 2. Outerwear, 3. Water Sports, 4. Shoes: ");
+		System.out.println("\nWhat are you shopping for today?");
+
+		
+		System.out.print("1. Camping, 2. Outerwear, 3. Water Sports, 4. Shoes: ");
 
 		// take user input(validate int 1 2 3 or 4)
 
@@ -30,15 +32,17 @@ public class CashRegisterApp {
 			category = "Shoes";
 		}
 
-		System.out.println("These are our " + category + " items:");
+		System.out.println("These are our options for " + category + ":");
+
 		for (Product p : productsForSale) {
 			if (p.getCategory().toString().equalsIgnoreCase(category)) {
-				System.out.println(p.getName() + " ~ " + p.getPrice());
+				System.out.println(p.getName() + " ~ " + "$" + p.getPrice());
 			}
 		}
-		System.out.print("Which would you like? ");
+
+		System.out.print("Which would you like to purchase? ");
 		int userItem = scanner.nextInt();
-		System.out.println("How many woud you like to buy?");
+		System.out.print("How many would you like to buy? ");
 		int qty = scanner.nextInt();
 
 		System.out.println("Would you like to continue shopping?");
