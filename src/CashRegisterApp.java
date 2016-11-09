@@ -34,14 +34,24 @@ public class CashRegisterApp {
 
 		System.out.println("These are our options for " + category + ":");
 
+		int j = 0;
+
 		for (Product p : productsForSale) {
-			if (p.getCategory().toString().equalsIgnoreCase(category)) {
-				System.out.println(p.getName() + " ~ " + "$" + p.getPrice());
-			}
+						
+			if (p.getCategory().toString().equalsIgnoreCase(category)) { 
+				j++;
+				System.out.println(j + ". " + p.getName() + " ~ " + "$" + p.getPrice());
+			} 
 		}
 
 		System.out.print("Which would you like to purchase? ");
 		int userItem = scanner.nextInt();
+
+		
+		
+		
+		
+		
 		System.out.print("How many would you like to buy? ");
 		int qty = scanner.nextInt();
 
