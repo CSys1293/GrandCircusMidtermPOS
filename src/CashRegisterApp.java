@@ -12,6 +12,7 @@ public class CashRegisterApp {
 		
 		System.out.println("Welcome to Elk Mouth Goods");
 		System.out.println("What are you shopping for today?");
+
 			
 		String choice1;
 		String choice2;
@@ -23,10 +24,10 @@ public class CashRegisterApp {
 		System.out.print(productsForSale.toString());
 
 		
+
 		
-		//		Reader list = new Reader();
-//		list.openFile();
-//		list.readFile();
+	
+		ArrayList<Product> products = new ArrayList<Product>();
 		
 		ArrayList<String> tempArray = new ArrayList<String>();
 		tempArray.add("Camping \t Tent \t 129.95");
@@ -35,28 +36,32 @@ public class CashRegisterApp {
 		tempArray.add("Shoes \t Hiking Boots \t 200.00");
 		tempArray.add("Shoes \t Trail Shoes \t 99.00");
 		
-		
-		
-		
+		boolean condition = true;
+		//loop until checkout
+		do  {
+		System.out.println("Select a category: ");
 		
 		System.out.println("1. Camping, 2. Outerwear, 3. Water Sports, 4. Shoes: ");
 		//take user input(validate int 1 2 3 or 4)
 		int userSelection = scanner.nextInt();
-		int userItem; 
+		
 		//display items in selected category
 		//camping option
 		if(userSelection == 1) {
 			//prompt user for input
+			System.out.println("Camping");
 			System.out.println("Select an item: ");
 			//items from category camping
 			System.out.println("1. Tent");
 			System.out.println("2. Sleeping bag");
 			System.out.println("3. Lantern");
 			System.out.println("4. Camp Stove");
+			int userItem = scanner.nextInt();
 			}
 		//if user selects outerwear
 		else if (userSelection == 2) {
 			//prompt user for input
+			System.out.println("Outerwear");
 			System.out.println("Select an item: ");
 			//items from category outerwear
 			System.out.println("1. Jacket");
@@ -65,6 +70,7 @@ public class CashRegisterApp {
 			}
 		else if(userSelection == 3 ) {
 			//prompt user for input
+			System.out.println("Water Sports");
 			System.out.println("Select an item: ");
 			//items from cat 3 water sports
 			System.out.println("1. Kayak");
@@ -75,6 +81,7 @@ public class CashRegisterApp {
 		}
 		else if(userSelection == 4) {
 			//prompt user for input
+			System.out.println("Shoes");
 			System.out.println("Select an item: ");
 			// items from cat shoes
 			System.out.println("1. Hiking Boots");
@@ -84,17 +91,31 @@ public class CashRegisterApp {
 			
 		}
 		//ask for qtny for selected item
+		System.out.println("How many woud you like to buy?");
 		//display line total price * qtny
 		//continue shopping or check out?
-		//loop until checkout
+		
 		//display subtotal, tax, grandtotal "use big decimal"
 		
 		//payment type
 		
 		//display receipt 
+		System.out.println();
 		
 		//start over
 		
 
+	} while (condition);
+		
+	System.out.println("Would you like to continue shopping?");
+	
+
+		System.out.println("Thank you for shopping at Elk Mouth Goods");
 	}
+
+	private static void printnewPriceList() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
