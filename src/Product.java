@@ -5,20 +5,27 @@ public class Product {
 	
 	//set price to string convert to double when needed
 	private String category;
-	private String item;
+	private String name;
 	private double price;
 
 	public Product(String cat, String itm, Double prc) {
-		cat = category;
-		itm = item;
-		prc = price;
+		category =cat;
+		name = itm;
+		price = prc;
 		
 	}
+	
+	@Override
+	public String toString() {
+		return "Product [name=" + name + ", category=" + category + ", price=" + price + "]";
+	}	
+	
+	
 	
 	public Product getProduct(String cat, String itm, Double prc) {
 		Product p = new Product(cat, itm, prc) ;
 		cat = category;
-		itm = item;
+		itm = name;
 		prc = price;
 		return p;
 	}
@@ -28,30 +35,36 @@ public class Product {
 		return category;
 	}
 
-	public String getItem() {
-		return item;
+	public String getName() {
+		return name;
 	}
 
 	public double getPrice() {
 		return price;
 	}
-//setters
+
+	
+	
+	
+	//setters
 	public void setCategory(String cat) {
-		cat = category;
+		category = cat;
 	}
 
-	public void setItem(String itm) {
-		itm = item;
+	public void setName(String itm) {
+		name = itm;
 	}
 
 	public void setPrice(double prc) {
-		prc = price;
+		price = prc;
 	}
-	@Override
-	public String toString() {
-		return category + "," + item + " $" + price;
-		
-	}
+
+	
+	//	@Override
+//	public String toString() {
+//		return category + "," + name + " $" + price;
+//		
+//	}
 	
 	
 }

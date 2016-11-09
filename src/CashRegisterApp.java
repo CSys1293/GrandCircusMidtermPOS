@@ -12,19 +12,21 @@ public class CashRegisterApp {
 		
 		System.out.println("Welcome to Elk Mouth Goods");
 		System.out.println("What are you shopping for today?");
-		
-		
-		
+			
 		String choice1;
 		String choice2;
 		String choice3;
 		String choice4;
 		
-		ArrayList<Product> products = new ArrayList<Product>();
+		ArrayList<Product> productsForSale = Reader.FileReading();
 
-		Reader list = new Reader();
-		list.openFile();
-		list.readFile();
+		System.out.print(productsForSale.toString());
+
+		
+		
+		//		Reader list = new Reader();
+//		list.openFile();
+//		list.readFile();
 		
 		ArrayList<String> tempArray = new ArrayList<String>();
 		tempArray.add("Camping \t Tent \t 129.95");

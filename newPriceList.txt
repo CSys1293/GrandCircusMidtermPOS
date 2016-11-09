@@ -1,19 +1,19 @@
-Camping	Tent	129.95
-Camping	SleepingBag	50.00
-Camping	Lantern	12.99
-Camping	CampStove	39.99
-Outerwear	Jacket	189.50
-Outerwear	Winter Coat	199.99
-Outerwear	Snowsuit	100.00
-Outerwear	Gloves	12.95
-Outerwear	Hat	10.00
-Outerwear	Scarf	7.86
-WaterSports	Kayak	700.00 
-WaterSports	Oars	23.93 
-WaterSports	Fishing poles	89.45 
-WaterSports	Water skis	154.99 
-WaterSports	Canoe	968.31 
-Shoes	HikingBoots	200.00 
-Shoes	TrailShoes	99.00 
-Shoes	SnowBoots	129.00 
-Shoes	RainBoots	40.00
+Camping,Tent,129.95
+Camping,SleepingBag,50.00
+Camping,Lantern,12.99
+Camping,CampStove,39.99
+Outerwear,Jacket,189.50
+Outerwear,Winter Coat,199.99
+Outerwear,Snowsuit,100.00
+Outerwear,Gloves,12.95
+Outerwear,Hat,10.00
+Outerwear,Scarf,7.86
+WaterSports,Kayak,700.00 
+WaterSports,Oars,23.93 
+WaterSports,Fishing poles,89.45 
+WaterSports,Water skis,154.99 
+WaterSports,Canoe,968.31 
+Shoes,HikingBoots,200.00 
+Shoes,TrailShoes,99.00 
+Shoes,SnowBoots,129.00 
+Shoes,RainBoots,40.00
