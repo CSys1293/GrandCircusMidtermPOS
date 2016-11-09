@@ -1,13 +1,16 @@
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CashRegister {
 	static Scanner scan = new Scanner(System.in);
 
 	double price;
+	double itemSubTotal;
 	double subTotal;
 	int quantity;
 	static double change;
-	double grandTotal;
+	static double grandTotal;
 	double tax = .06;
 	double money;
 	static String payMethod;;
@@ -16,67 +19,81 @@ public class CashRegister {
 	String name;
 	String check = "check";
 
-	// item subtotal
-	public double setSubTotal(double price, double quantity) {
-		subTotal = price * quantity;
-		return subTotal;
+	public void setItemSubTotal(double price, int quantity) {
+		itemSubTotal = price * quantity;
+		return;
 	}
+
+	public double getItemSubTotal() {
+		return itemSubTotal;
+	}
+	public void cartArray(){
+		ArrayList<Double> items = new ArrayList<>();
+		
+
+	}
+
+//	public void setSubTotal() {
+//		for (items i : cart) {
+//			double subTotal = ((Product.getPrice()) * (Product.getQuantity()));
+//			finalPrice += subTotal;
+//			return;
+//		}
+//	}
 
 	public double getSubTotal() {
 		return subTotal;
 	}
 
-	public double setGrandTotal(double subtotal) {
+	public void setGrandTotal(double subtotal) {
 		grandTotal = subTotal + (subTotal * tax);
-		return grandTotal;
+		return;
 	}
 
-	public double getGrandTotal() {
-		return grandTotal;
+	public static String getGrandTotal() {
+		return CashRegister.formatNumber(grandTotal);
 	}
 
-	public String setPayMethod() {
-
+	public void setPayMethod(String p) {
 		boolean isValid = false;
 		while (!isValid) {
 			System.out.print("Please enter your payment method. (Cash, Check, Credit): ");
-			String payMethod = scan.nextLine();
-			payMethod.trim();
-			payMethod.toLowerCase();
-			if (payMethod.compareTo(cash) != 0 && payMethod.compareTo(credit) != 0 && payMethod.compareTo(check) != 0) {
+			p = scan.nextLine();
+			p.trim();
+			p.toLowerCase();
+			if (p.compareTo(cash) != 0 && p.compareTo(credit) != 0 && p.compareTo(check) != 0) {
 				System.out.println("Please enter check, cash, or credit.");
-			} else if (payMethod.compareTo(check) == 0) {
+			} else if (p.compareTo(check) == 0) {
 				System.out.println("Sorry, we stopped excepting checks in 2012.");
 			} else
 				isValid = true;
-
 		}
-		// make paymethod
-		// each paymethod will have unique message
-		// cash
-		// credit cc#, exp date, cvv
-		// check "do not take checks"
-
-		// once paid give receipt
-
-		return payMethod;
-
+		payMethod = p;
+		return;
 	}
 
 	public void makePayment() {
-		String method = CashRegister.payMethod;
-		
-		if (method.compareTo(cash)== 0) {
+		if (payMethod.equalsIgnoreCase(cash)) {
 			System.out.print("Please enter dollar amount: ");
 			double dollars = scan.nextDouble();
 			change = grandTotal - dollars;
-
+			System.out.println("Your change is $" + CashRegister.formatNumber(change) + ".");
 		} else
 			System.out.print("Please enter your credit card number: ");
+		long cc = scan.nextLong();
+		System.out.print("Please enter your expiration date: ");
+		int date = scan.nextInt();
+		System.out.print("Please enter your CVV#: ");
+		int cvv = scan.nextInt();
+		System.out.println("Approved! $" + CashRegister.getGrandTotal() + " was charged to your account.");
 	}
 
-	public String getPayMethod() {
-		return payMethod;
+	public static String formatNumber(double x) {
+		BigDecimal format = new BigDecimal(x);
+		format = format.setScale(2);
+		String formatted = format.toString();
+		return formatted;
 	}
 
+	
 }
