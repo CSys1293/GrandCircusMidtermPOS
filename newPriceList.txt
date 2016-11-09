@@ -1,4 +1,4 @@
-Camping	Tent	129.95
+Camping	Tent 	129.95
 Camping	SleepingBag	50.00
 Camping	Lantern	12.99
 Camping	CampStove	39.99
