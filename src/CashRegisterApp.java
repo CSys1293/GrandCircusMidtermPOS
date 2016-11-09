@@ -24,17 +24,6 @@ public class CashRegisterApp {
 		System.out.print(productsForSale.toString());
 
 		
-
-		
-	
-		ArrayList<Product> products = new ArrayList<Product>();
-		
-		ArrayList<String> tempArray = new ArrayList<String>();
-		tempArray.add("Camping \t Tent \t 129.95");
-		tempArray.add("Outerwear \t Jacket \t 189.50");
-		tempArray.add("Water Sports \t Kayak \t 700.00");
-		tempArray.add("Shoes \t Hiking Boots \t 200.00");
-		tempArray.add("Shoes \t Trail Shoes \t 99.00");
 		
 		boolean condition = true;
 		//loop until checkout
