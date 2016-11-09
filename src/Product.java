@@ -3,7 +3,7 @@ public class Product {
 //you are going to generate getters and setters  
 	
 	
-	//set price to string convert to double when needed
+//set price to string convert to double when needed
 	private String category;
 	private String name;
 	private double price;
@@ -17,11 +17,10 @@ public class Product {
 	
 	@Override
 	public String toString() {
-		return "Product [name=" + name + ", category=" + category + ", price=" + price + "]";
+		return "[name=" + name + ", category=" + category + ", price=" + price + "]";
 	}	
 	
-	
-	
+		
 	public Product getProduct(String cat, String itm, Double prc) {
 		Product p = new Product(cat, itm, prc) ;
 		cat = category;
