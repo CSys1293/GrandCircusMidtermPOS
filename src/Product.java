@@ -7,6 +7,7 @@ public class Product {
 	private String category;
 	private String name;
 	private double price;
+	private int quan;
 
 	public Product(String cat, String itm, Double prc) {
 		category =cat;
@@ -15,6 +16,10 @@ public class Product {
 		
 	}
 	
+	public Product(String i, double pr, int q, double sub) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
 		return "[name=" + name + ", category=" + category + ", price=" + price + "]";
@@ -56,6 +61,15 @@ public class Product {
 
 	public void setPrice(double prc) {
 		price = prc;
+	}
+	
+	public Product addToCart (String i, double pr, int q, double sub) {
+		Product pro = new Product(i, pr, q, sub) ;
+		i = name;
+		pr = price;
+		q = quan;
+		sub = (pr*q);
+		return pro;
 	}
 
 	

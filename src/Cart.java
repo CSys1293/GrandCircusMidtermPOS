@@ -1,20 +1,21 @@
 
 public class Cart {
-	
+
 	private String name;
 	private double price;
 	private int quantity;
 	private double itemSub;
-	
-	public Cart(String n, double p, int q, double s) {
+
+	public Cart(String n, double p, int q) {
 		name = n;
 		price = p;
 		quantity = q;
-		itemSub = s;
-		
+		itemSub = (p*q);
+
 	}
 
 	public String getName() {
+
 		return name;
 	}
 
@@ -45,5 +46,10 @@ public class Cart {
 	public void setItemSub(double itemSub) {
 		this.itemSub = itemSub;
 	}
+
+	@Override
+	public String toString() {
+		return "[item = " + name + ", price = " + price + ", quantity = " + quantity + ", subtotal = " + itemSub +" ]";
+	}	
 
 }

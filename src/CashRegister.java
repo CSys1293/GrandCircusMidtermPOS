@@ -7,11 +7,11 @@ public class CashRegister {
 
 	double price;
 	double itemSubTotal;
-	double subTotal;
+	static double subTotal;
 	int quantity;
 	static double change;
 	static double grandTotal;
-	double tax = .06;
+	static double tax = .06;
 	double money;
 	static String payMethod;;
 	String cash = "cash";
@@ -23,6 +23,11 @@ public class CashRegister {
 		itemSubTotal = price * quantity;
 		return;
 	}
+	
+	public void setSubTotal(double price) {
+		itemSubTotal = price;
+		return;
+	}	
 
 	public double getItemSubTotal() {
 		return itemSubTotal;
@@ -45,9 +50,10 @@ public class CashRegister {
 		return subTotal;
 	}
 
-	public void setGrandTotal(double subtotal) {
-		grandTotal = subTotal + (subTotal * tax);
-		return;
+	public static double setGrandTotal(double subTotal) {
+		grandTotal = (subTotal + (subTotal * tax));
+		return grandTotal;
+
 	}
 
 	public static String getGrandTotal() {
@@ -89,8 +95,7 @@ public class CashRegister {
 	}
 
 	public static String formatNumber(double x) {
-		BigDecimal format = new BigDecimal(x);
-		format = format.setScale(2);
+		BigDecimal format = new BigDecimal(x).setScale(2, BigDecimal.ROUND_HALF_UP);
 		String formatted = format.toString();
 		return formatted;
 	}
