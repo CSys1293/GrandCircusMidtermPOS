@@ -8,29 +8,21 @@ public class CashRegisterApp {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		Validator val = new Validator();
 		ArrayList<Product> productsForSale = Reader.FileReading();
-		String category = null;
 		POSReceipt currentReceipt = new POSReceipt();
+		String category = null;
 		String pay = null;
-
 
 		while (true) {
 
 			boolean keepGoing = true;
 			System.out.println("Welcome to Elk Mouth Goods");
 
-			// System.out.println("\nWhat category would you like to browse?");
-
 			do {
-
 				System.out.println("\nWhat category would you like to browse?");
-				System.out.print("1. Camping, 2. Outerwear, 3. Water Sports, 4. Shoes: ");
 
-				// take user input(validate int 1 2 3 or 4)
-
-				int userSelection = scanner.nextInt();
-
+				int userSelection = Validator.getInt(scanner,"1. Camping, 2. Outerwear, 3. Water Sports, 4. Shoes: ", 1, 4);
+						
 				if (userSelection == 1) {
 					category = "Camping";
 				} else if (userSelection == 2) {
@@ -55,79 +47,42 @@ public class CashRegisterApp {
 					}
 				}
 
-				System.out.print("Which would you like to purchase? ");
+				int userItem = Validator.getInt(scanner,"Which item would you like to purchase? (1-" + j + "): ", 1, j)-1;
 
-				int userItem = (scanner.nextInt() - 1);
+				int userQ = Validator.getPositiveInt(scanner, "How many would you like to buy? ");
 
-				System.out.print("How many would you like to buy? ");
+				Cart itemsInCart = new Cart(activeItems.get(userItem).getName(), activeItems.get(userItem).getPrice(),userQ);
 
-				int userQ = scanner.nextInt();
+				currentReceipt.addToRec(itemsInCart);
 
-				Cart thisOne = new Cart(activeItems.get(userItem).getName(), activeItems.get(userItem).getPrice(),
-						userQ);
-
-				currentReceipt.addToRec(thisOne);
-
-				System.out.print("\nWould you like to continue shopping? ");
-
-				String choice = scanner.next();
-
-				while (!choice.toLowerCase().startsWith("n") && !choice.toLowerCase().startsWith("y")) {
-					System.out.print(" Invalid answer. Please respond \"YES\" or \"NO\": ");
-					choice = scanner.next();
-				}
+				String choice = Validator.getYesOrNo(scanner, "\nWould you like to continue shopping? (\"YES\" to continue or \"NO\" to checkout): ");
 
 				if (choice.toLowerCase().startsWith("y")) {
 					scanner.nextLine(); // clear trash from scanner
 					keepGoing = true;
 
 				} else if (choice.toLowerCase().startsWith("n")) {
-
-					keepGoing = false; // end the shopping session
-
-					// scanner.close(); // close the resource leak
+					keepGoing = false; // end the shopping session and move to checkout
 				}
+
 			} while (keepGoing);
 
-			double subT = 0.00;
+			double subT = 0.00; // begin checkout process
 
-			System.out.println("Here's what you have in your cart:");
-
+			System.out.println("\nHere's what you have in your cart:");
+			System.out.println("ITEM \t\tPRICE \tQTY \tTOTAL");
 			for (Cart c : currentReceipt.getReceiptOfItems()) {
 				System.out.println(c.getName() + "\t" + "$"+CashRegister.formatNumber(c.getPrice()) + "\t" + c.getQuantity() + "\t" + "$"+CashRegister.formatNumber(c.getItemSub()));
 				subT += c.getItemSub();
 			}
 
-			System.out.println("Subtotal: $" + CashRegister.formatNumber(subT) + "\nTax @ 6%: $" + (CashRegister.formatNumber(subT * 0.06)));
-			double gt = CashRegister.setGrandTotal(subT);
+			System.out.println("\nSUBTOTAL: $" + CashRegister.formatNumber(subT) + "\nTAX @ 6%: $" + (CashRegister.formatNumber(subT * 0.06)));
 
-			System.out.println("Grand Total = $" + CashRegister.getGrandTotal());
+			double gt = CashRegister.setGrandTotal(subT);
+			System.out.println("GRAND TOTAL = $" + CashRegister.getGrandTotal());
 			CashRegister.setPayMethod(pay);
 			CashRegister.makePayment();
 			System.out.println("Thank you for shopping at Elk Mouth Goods" + "\n\n\n");
 		}
-
-		// loop until checkout
-
-		// if user selects outerwear
-
-		// ask for qtny for selected item
-
-		// display line total price * qtny
-		// continue shopping or check out?
-
-		// display subtotal, tax, grandtotal "use big decimal"
-
-		// payment type
-
-		// display receipt
-		// System.out.println();
-
-		// start over
-
-		// } while (condition);
-
-		// private static void printnewPriceList() {
-
 	}
 }

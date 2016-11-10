@@ -71,18 +71,17 @@ public class CashRegister {
 		if (payMethod.equalsIgnoreCase(cash)) {
 			System.out.print("Please enter dollar amount: ");
 			double dollars = scan.nextDouble();
-			change = grandTotal - dollars;
-			change = -change;
+			change = dollars - grandTotal;
 			System.out.println("Your change is $" + CashRegister.formatNumber(change) + ".");
 			return;
 		} else
 			System.out.print("Please enter your credit card number: ");
-		long cc = scan.nextLong();
-		System.out.print("Please enter your expiration date: ");
-		int date = scan.nextInt();
-		System.out.print("Please enter your CVV#: ");
-		int cvv = scan.nextInt();
-		System.out.println("Approved! $" + CashRegister.getGrandTotal() + " was charged to your account.");
+			long cc = scan.nextLong();
+			System.out.print("Please enter your expiration date: ");
+			int date = scan.nextInt();
+			System.out.print("Please enter your CVV#: ");
+			int cvv = scan.nextInt();
+			System.out.println("Approved! $" + CashRegister.getGrandTotal() + " was charged to your account.");
 	}
 
 	public static String formatNumber(double x) {
@@ -90,6 +89,4 @@ public class CashRegister {
 		String formatted = format.toString();
 		return formatted;
 	}
-
-	
 }
