@@ -90,16 +90,13 @@ public class CashRegisterApp {
 
 			double subT = 0.00;
 
-			for (Cart c : currentReceipt.getReceiptOfItems()) {
-				System.out.println(c.getItemSub());
-				subT = (subT + c.getItemSub());
-			}
-
 			System.out.println("Here's what you have in your cart:");
 
 			for (Cart c : currentReceipt.getReceiptOfItems()) {
 				System.out.println(c.getName() + "\t" + c.getPrice() + "\t" + c.getQuantity() + "\t" + c.getItemSub());
+				subT += c.getItemSub();
 			}
+	
 			System.out.println("Subtotal: $" + subT +"\nTax @ 6%: " + (subT*0.06));
 			double gt = CashRegister.setGrandTotal(subT);
 
