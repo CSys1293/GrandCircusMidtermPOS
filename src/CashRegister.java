@@ -14,10 +14,11 @@ public class CashRegister {
 	static double tax = .06;
 	double money;
 	static String payMethod;;
-	String cash = "cash";
-	String credit = "credit";
+	static String cash = "cash";
+	static String credit = "credit";
 	String name;
-	String check = "check";
+	static String check = "check";
+	static String p;
 
 	public void setItemSubTotal(double price, int quantity) {
 		itemSubTotal = price * quantity;
@@ -32,19 +33,7 @@ public class CashRegister {
 	public double getItemSubTotal() {
 		return itemSubTotal;
 	}
-	public void cartArray(){
-		ArrayList<Double> items = new ArrayList<>();
-		
 
-	}
-
-//	public void setSubTotal() {
-//		for (items i : cart) {
-//			double subTotal = ((Product.getPrice()) * (Product.getQuantity()));
-//			finalPrice += subTotal;
-//			return;
-//		}
-//	}
 
 	public double getSubTotal() {
 		return subTotal;
@@ -60,7 +49,7 @@ public class CashRegister {
 		return CashRegister.formatNumber(grandTotal);
 	}
 
-	public void setPayMethod(String p) {
+	public static void setPayMethod(String p) {
 		boolean isValid = false;
 		while (!isValid) {
 			System.out.print("Please enter your payment method. (Cash, Check, Credit): ");
@@ -78,12 +67,14 @@ public class CashRegister {
 		return;
 	}
 
-	public void makePayment() {
+	public static void makePayment() {
 		if (payMethod.equalsIgnoreCase(cash)) {
 			System.out.print("Please enter dollar amount: ");
 			double dollars = scan.nextDouble();
 			change = grandTotal - dollars;
+			change = -change;
 			System.out.println("Your change is $" + CashRegister.formatNumber(change) + ".");
+			return;
 		} else
 			System.out.print("Please enter your credit card number: ");
 		long cc = scan.nextLong();

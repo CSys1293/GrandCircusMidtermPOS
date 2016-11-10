@@ -1,7 +1,6 @@
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.math.BigDecimal;
 
 // Team Clara, Jake, Taher,
 
@@ -13,6 +12,8 @@ public class CashRegisterApp {
 		ArrayList<Product> productsForSale = Reader.FileReading();
 		String category = null;
 		POSReceipt currentReceipt = new POSReceipt();
+		String pay = null;
+
 
 		while (true) {
 
@@ -49,7 +50,7 @@ public class CashRegisterApp {
 
 					if (p.getCategory().toString().equalsIgnoreCase(category)) {
 						j++;
-						System.out.println(j + ". " + p.getName() + " ~ " + "$" + p.getPrice());
+						System.out.println(j + ". " + p.getName() + " ~ " + "$" + CashRegister.formatNumber(p.getPrice()));
 						activeItems.add(p);
 					}
 				}
@@ -93,15 +94,16 @@ public class CashRegisterApp {
 			System.out.println("Here's what you have in your cart:");
 
 			for (Cart c : currentReceipt.getReceiptOfItems()) {
-				System.out.println(c.getName() + "\t" + c.getPrice() + "\t" + c.getQuantity() + "\t" + c.getItemSub());
+				System.out.println(c.getName() + "\t" + "$"+CashRegister.formatNumber(c.getPrice()) + "\t" + c.getQuantity() + "\t" + "$"+CashRegister.formatNumber(c.getItemSub()));
 				subT += c.getItemSub();
 			}
-	
-			System.out.println("Subtotal: $" + subT +"\nTax @ 6%: " + (subT*0.06));
+
+			System.out.println("Subtotal: $" + CashRegister.formatNumber(subT) + "\nTax @ 6%: $" + (CashRegister.formatNumber(subT * 0.06)));
 			double gt = CashRegister.setGrandTotal(subT);
 
-			System.out.println("Grand Total = " + CashRegister.getGrandTotal());
-
+			System.out.println("Grand Total = $" + CashRegister.getGrandTotal());
+			CashRegister.setPayMethod(pay);
+			CashRegister.makePayment();
 			System.out.println("Thank you for shopping at Elk Mouth Goods" + "\n\n\n");
 		}
 
